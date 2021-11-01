@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply text-2xl;
+  @apply font-bold;
+}
+
+h2 {
+  @apply text-xl;
+  @apply font-bold;
+}
+
+h3 {
+  @apply text-lg;
+  @apply font-bold;
+}
+
+h4 {
+  @apply text-[.95rem];
+  @apply font-bold;
+  @apply text-grey-35;
+  @apply uppercase;
+}
+
+p {
+}
+
+small {
+  @apply text-sm;
+}
+
+.tiny {
+  @apply text-xs;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,95 @@
+export const metadata = {
+  author: "Brendan",
+  title: "2023 W8 Weeknotes",
+  published: "2023-08-27",
+  tags: ["weeknotes"],
+};
+
+## Intro
+
+Here are weeknotes for 2023, week 8, the first Brendan-authored edition in this new weeknotes era.
+
+To recap, last week (w7) the core things we worked on were improved sidebar nav, including refactoring room types, and better communication, primarily implementing a new chat / discussion system.
+
+This week (w8) we set out to address one big question: how to make it clear _what to do next_ when you join / visit a Space.
+
+## What we did this week
+
+We started out with a few ideas around what might help towards this BIG GOAL — things like refactoring "your room" to be more like a checklist, and adding some sort of calendar or log view to Spaces. We also had some looser things in mind like improving fun / playfulness / vibes / energy, studio refactor, additional room types…
+
+I started the week with the idea we could try several small experiments in service of our core goal, and we brainstormed an initial list of around a half dozen ideas. The ideal vision here was to pick one per day, and finish the week with 3-4 minimal but completed new things to test out.
+
+It didn't _quite_ work out that way, so it's probably useful to take a look back at how the week unfolded.
+
+I think we took the better part of a day to initialize the weekspace, generate experiment ideas, and otherwise play around in meta-land (e.g. "artifact" Spaces, about which more below), which was useful to test out the new unread indicators we'd just added, the last step in making the recent discussions feature a complete usable thing.
+
+We were initially leaning in the direction of refactoring the per-member room to be something like a checklist, focusing on explicit to do items. But on Wednesday morning we got to talking…and talking…and what do you know, the problems and attendant potential solutions seemed to multiply before our eyes!
+
+## Three experiments
+
+After this detour in decomposition, we made our way to (more or less) a new set of three things to try:
+
+- collection + card preview refactor
+- reactions / emoji picker
+- new space home dashboard
+
+The idea was to separate out the goals of a) supporting specific action items e.g. for more of a group project Space (the first two items) and b) a more clear big picture view on activity and available things to do in a Space (the latter item).
+
+This was a good direction, but did not fully align with the temporal boundaries of the week, given limited time to actually build the things we talked about.
+
+The first we more or less completed, the second we started, and the third we talked about and sketched but did not yet implement.
+
+(Re: mid-week sidetracking Jared mentioned this repeating and perhaps inescapable cycle of clarity and confusion. Both part of the process, and surely a pattern we can continue to improve upon…)
+
+Here's where we're at with each of these things:
+
+- collection + card preview refactor — we changed the "collection" room type to be toggleable between three views: grid (as before), list (horizontal rows), and preview (full card content), with some refactoring to card preview; the idea was to enable a more flexible primitive for checklist as well as other basic tagging / sorting, by way of…
+- reactions / emoji picker — a simple way to add an emoji (or potentially short 4-char text string) to any card, as a sort of hybrid of reaction and tag; Jared started on this, but it's a bit complex and we didn't get far enough to test (and TBD if we should use a library or roll our own)
+- new space home dashboard — lots of ideas, including custom actions / buttons, but we settled on initially just replacing the confusing per-member room with a shared dashboard serving as a map of all the rooms in a Space, with more info and perhaps a default "new card" button for each; did some sketches but yet to implement
+
+TL;DR still need to do the basic dashboard refactor, and further explore the emoji / reaction feature + how it integrates with the card list view.
+
+## Space-making
+
+We had a couple ongoing / new Spaces, like my "Reading the New Media Reader" book club (continued to be mostly inactive; will try again later) and Celine's "Stuffy Stuff" (some nice inspo; just getting started!)
+
+I'd initially noted re: Space playtesting "let's focus on more specific ones", i.e. short and tightly scoped Spaces that might be better to test specific things in a contained way. We didn't do many of these, but the main thing to talk about this week are the meta Spaces we did.
+
+One I intended to start this week was a website jam Space for pattern.kitchen (used as example in talking about checklists and clear action items on a Space dashboard) but holding off on that for now. We did start some Spaces exploring potential Hyperlink artifacts though, which were fun if a bit unfocused!
+
+I created on for me + Jared, another for me + Celine, and another solo Space just for me, largely because they formed a fun set of Space names (lol) but also because it seemed like a fun way to experiment with conversations / notifications and see how similar Spaces might vary. It was fun brainstorming some ideas, but I didn't provide enough structure in how we should take a couple particular ideas and expand on them in the next phase, i.e. actually starting work on a given artifact. These don't feel complete so we'll probably pause and revisit later.
+
+The weekspace itself was also quite useful, particularly as a place to collect ideas and possibilities in a few areas, like "room ideas", "dashboard ideas", "action item ideas", "inspo", and "observations". Also a "lil things" room where Jared knocked out lots of little fixes on day one!
+
+Most of these seemed to be mostly lists I (resident list-lover) made, but felt collaborative to some degree. We did some test conversations in "dachatzone" but it wasn't a regular chat room / full Signal chat replacement for more than the ~one day when I suggested that constraint.
+
+## Observations
+
+Here's a summary of the things I added to the "observations" room throughout the week:
+
+- READMEs are generally useful — might be worth adding to each room (we talked about room description on a home dashboard)
+- people need more nudges to do stuff — a common pattern seems to be inviting people to a Space, they join, but have to nudge in chat / DM separately to get activity happening
+- any sense of activity makes spaces feel more alive — I like seeing the notification dots / glows; would be fun to explore more ways to create a sense of dynamism and aliveness in Spaces (perhaps with automated agents of some kind?)
+- some way to personalize rooms would be really nice — right now all Spaces AND all rooms basically look the same…simple ways to make that not the case, probably worth exploring
+- something feels a lil weird w/ comment structure — we could explore streamlining a bit e.g. for single vs. multithreaded discussions, testing a way to pin conversation cards to the sidebar, etc.
+- nice thing w/ small scale sync-ish spaces where notification whack-a-mole is fun — seems like there's a sweet spot with regular notifications, but not so many it becomes overwhelming…want to explore this balance more
+- fuzzy boundaries of room definitions — feeling like 'types' aren't always clear, and could perhaps be more malleable (also things like referenceable rooms to enable sub-collections etc. could be nice)
+
+## What's next?
+
+This week, a change of pace! Jared's leading a week of focused thinking / iterating, each of us tackling one thing with a block of daily deep work. So the product work is mostly on pause; we'll capture ideas as they come but take a break from core work on the app.
+
+After that, the big question we started with — how best to direct attention to specific actions in a space — remains fairly open, and we should explore it further. The obvious next thing to get back to is a better Space dashboard, but there's plenty more related things to play with around conversation, attention, intention, dynamics between people, and making Spaces more fun and social.
+
+Small things might include:
+
+- richer notifications — bubble up to the Studio, send simple daily emails, etc.
+- improved card creation — refactor find-and-create, simplify new card creation flow (perhaps iterating toward command bar, below)
+
+Bigger things might include:
+
+- testing presence features — basic API for realtime presence indicators, aiming to better support Spaces with a sync component (also recent 'last seen' for async presence)
+- live calls — could also try audio call rooms, for even stronger synchronous activity
+- command bar — unifying the various actions in rooms, on selected cards, from dashboard, global creation and nav, etc.
+
+We'll see what ideas emerge next week, after we've devoted more thought to a new landing page, the vibes and expressivity of Spaces and Studios, and, you know, the entire existential purpose of the app :)
