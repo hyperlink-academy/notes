@@ -7,6 +7,7 @@ export const metadata = {
 };
 
 import Link from "next/link";
+import Head from "next/head";
 export default async function RootLayout({
   children,
 }: {
@@ -15,6 +16,9 @@ export default async function RootLayout({
   let pages = await getPageData();
   return (
     <html lang="en" className="w-full">
+      <Head>
+        <title>notes.hyperlink.academy</title>
+      </Head>
       <body className="max-w-4xl p-4 w-full grid grid-cols-[200px,1fr]">
         <div className="w-52 flex flex-col gap-2 sticky top-2">
           <Link href="/">home</Link>
