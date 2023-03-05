@@ -33,7 +33,7 @@ export default async function NotePAge(props: { params: Params }) {
       <div className="flex flex-col gap-4">
         <div className="w-full ">
           <h1 className="text-2xl font-bold">{Content.metadata.title}</h1>
-          <p className="italic text-grey-55">by {Content.metadata.author}</p>
+          <p className="italic text-grey-35">by {Content.metadata.author}</p>
           <div>
             {Content.metadata.tags.map((tag, index) => (
               <span className="text-xs p-1 border rounded-md" key={index}>
