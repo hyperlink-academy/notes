@@ -1,6 +1,5 @@
 import fs from "fs/promises";
 import path from "path";
-import Head from "next/head";
 
 type PostMetadata = {
   title: string;
@@ -12,38 +11,41 @@ type PostMetadata = {
 type Params = { note: string };
 
 export async function generateMetadata({ params }: { params: Params }) {
-  let Content: { default: React.FC; metadata: PostMetadata } = await import(
-    `notes/${params.note}`
-  );
-
-  return { title: Content.metadata.title };
+  let note = await getNoteData(params.note);
+  if (!note) return { title: "404 not found" };
+  return { title: note.metadata.title };
 }
 
-export default async function NotePAge(props: { params: Params }) {
+export default async function NotePage(props: { params: Params }) {
   //I need to do this to make sure notes are cached in this function!
   await fs.readdir(path.join(process.cwd(), "./notes"));
-  let Content: { default: React.FC; metadata: PostMetadata } = await import(
-    `notes/${props.params.note}`
-  );
+  let note = await getNoteData(props.params.note);
+  if (!note) return <div>404 note not found</div>;
   return (
-    <>
-      <Head>
-        <title>Content.metadata.title</title>
-      </Head>
-      <div className="flex flex-col gap-4">
-        <div className="w-full ">
-          <h1 className="text-2xl font-bold">{Content.metadata.title}</h1>
-          <p className="italic text-grey-35">by {Content.metadata.author}</p>
-          <div>
-            {Content.metadata.tags.map((tag, index) => (
-              <span className="text-xs p-1 border rounded-md" key={index}>
-                {tag}
-              </span>
-            ))}
-          </div>
+    <div className="flex flex-col gap-4">
+      <div className="w-full ">
+        <h1 className="text-2xl font-bold">{note.metadata.title}</h1>
+        <p className="italic text-grey-35">by {note.metadata.author}</p>
+        <div>
+          {note.metadata.tags.map((tag, index) => (
+            <span className="text-xs p-1 border rounded-md" key={index}>
+              {tag}
+            </span>
+          ))}
         </div>
-        <Content.default />
       </div>
-    </>
+      <note.default />
+    </div>
   );
+}
+
+async function getNoteData(note: string) {
+  try {
+    let Page: { default: React.FC; metadata: PostMetadata } = await import(
+      `notes/${note}.mdx`
+    );
+    return Page;
+  } catch (e) {
+    return null;
+  }
 }

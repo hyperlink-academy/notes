@@ -2,9 +2,7 @@ import fs from "fs/promises";
 import { cache } from "react";
 import "./globals.css";
 import Link from "next/link";
-import Head from "next/head";
 
-export const metadata = { title: "notes.hyperlink.academy" };
 export default async function RootLayout({
   children,
 }: {
@@ -22,7 +20,7 @@ export default async function RootLayout({
             )
             .map((page) => (
               <Link
-                href={`/note/${page.filename}`}
+                href={`/note/${page.filename.slice(0, -4)}`}
                 key={page.filename}
                 className="text-accent-blue hover:underline"
               >
