@@ -2,17 +2,27 @@ import fs from "fs/promises";
 import path from "path";
 import Head from "next/head";
 
-type Metadata = {
+type PostMetadata = {
   title: string;
   author: string;
   published: string;
   tags: string[];
 };
 
-export default async function NotePAge(props: { params: { note: string } }) {
+type Params = { note: string };
+
+export async function generateMetadata({ params }: { params: Params }) {
+  let Content: { default: React.FC; metadata: PostMetadata } = await import(
+    `notes/${params.note}`
+  );
+
+  return { title: Content.metadata.title };
+}
+
+export default async function NotePAge(props: { params: Params }) {
   //I need to do this to make sure notes are cached in this function!
   await fs.readdir(path.join(process.cwd(), "./notes"));
-  let Content: { default: React.FC; metadata: Metadata } = await import(
+  let Content: { default: React.FC; metadata: PostMetadata } = await import(
     `notes/${props.params.note}`
   );
   return (

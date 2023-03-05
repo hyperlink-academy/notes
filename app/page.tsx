@@ -1,6 +1,6 @@
-import fs from "fs/promises";
+export const metadata = { title: "notes.hyperlink.academy" };
 const Home = async () => {
-  return <div>home page</div>;
+  return <div>Some notes from the hyperlink team</div>;
 };
 
 export default Home;
