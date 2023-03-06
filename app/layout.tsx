@@ -11,7 +11,8 @@ export default async function RootLayout({
   let pages = await getPageData();
   return (
     <html lang="en" className="w-full">
-      <body className="max-w-4xl p-4 w-full grid grid-cols-[200px,1fr]">
+      {/* <body className="max-w-4xl p-4 w-full grid grid-cols-[200px,1fr]"> */}
+      <body className="m-auto flex max-w-4xl gap-8 p-8">
         <div className="w-52 flex flex-col gap-2 sticky top-2">
           <Link href="/">home</Link>
           {pages
