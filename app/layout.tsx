@@ -11,25 +11,30 @@ export default async function RootLayout({
   let pages = await getPageData();
   return (
     <html lang="en" className="w-full">
-      {/* <body className="max-w-4xl p-4 w-full grid grid-cols-[200px,1fr]"> */}
-      <body className="m-auto flex max-w-4xl gap-8 p-8">
-        <div className="w-52 flex flex-col gap-2 sticky top-2">
-          <Link href="/">home</Link>
-          {pages
-            .sort((a, b) =>
-              a.metadata.published < b.metadata.published ? 1 : -1
-            )
-            .map((page) => (
-              <Link
-                href={`/note/${page.filename.slice(0, -4)}`}
-                key={page.filename}
-                className="text-accent-blue hover:underline"
-              >
-                {page.metadata?.title || page.filename}
-              </Link>
-            ))}
+      <body className="">
+        <div className="m-auto w-fit px-4 py-2 rounded-b-md bg-[gold] text-center">
+          <em>artifacts</em> & <em>working notes</em> from{" "}
+          <a href="https://hyperlink.academy/">hyperlink.academy</a>
         </div>
-        <div>{children}</div>
+        <div className="m-auto flex max-w-4xl gap-2 sm:gap-8 p-4 sm:p-8">
+          <div className="w-24 sm:w-32 flex flex-col flex-shrink-0 gap-2 sticky self-start top-2">
+            <Link href="/">home</Link>
+            {pages
+              .sort((a, b) =>
+                a.metadata.published < b.metadata.published ? 1 : -1
+              )
+              .map((page) => (
+                <Link
+                  href={`/note/${page.filename.slice(0, -4)}`}
+                  key={page.filename}
+                  className="text-accent-blue hover:underline"
+                >
+                  {page.metadata?.title || page.filename}
+                </Link>
+              ))}
+          </div>
+          <div>{children}</div>
+        </div>
       </body>
     </html>
   );
