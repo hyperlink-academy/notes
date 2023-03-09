@@ -21,7 +21,7 @@ export default async function RootLayout({
           <a href="https://hyperlink.academy/">hyperlink.academy</a>
         </div>
         <div className="m-auto flex max-w-4xl gap-2 sm:gap-8 p-4 sm:p-8">
-          <div className="w-24 sm:w-32 flex flex-col flex-shrink-0 gap-4 leading-5 sticky self-start top-2">
+          <div className="w-24 sm:w-32 flex flex-col flex-shrink-0 gap-4 leading-5 sticky self-start top-4">
             {/* <strong> */}
             <Link href="/">home</Link>
             {/* </strong> */}

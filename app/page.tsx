@@ -30,15 +30,17 @@ const Home = async () => {
         presence and aliveness, sessions, sprints, cycles, cadences…
       </p>
       <p>
-        Last year was exploratory: lots of research, evolution, laying new
-        foundations. Now (early 2023) we're finding focus in what we're making,
-        playing with new ways of working, having fun with process.
+        Last year was exploratory: research, evolution, new foundations. Now,
+        we're finding focus in what we're making, playing with new ways of
+        working, having fun with process.
       </p>
+      <p>~-~-~-~</p>
       <div>
-        <p>~-~-~-~</p>
+        {/* <p>~-~-~-~</p> */}
         <p>Brendan, Jared, Celine</p>
         <p>March, 2023</p>
       </div>
+      <p>~-~-~-~</p>
 
       <p>
         <em>

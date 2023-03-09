@@ -30,7 +30,7 @@ export default async function NotePage(props: { params: Params }) {
           <p className="italic text-grey-35">{note.metadata.published}</p>
         </div>
 
-        <div>
+        <div className="shrink-0">
           {note.metadata.tags.map((tag, index) => (
             <span className="text-xs p-1 border rounded-md" key={index}>
               {tag}

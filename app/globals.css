@@ -46,6 +46,7 @@ body {
   @apply text-grey-15;
   min-height: -webkit-fill-available;
   font-family: "Quattro";
+  word-break: break-word;
 }
 
 a {
