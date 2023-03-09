@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import { cache } from "react";
 import "./globals.css";
 import Link from "next/link";
+// import { useRouter } from "next/navigation";
 
 export default async function RootLayout({
   children,
@@ -9,6 +10,9 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   let pages = await getPageData();
+  // let { query, pathname } = useRouter();
+  // console.log(query);
+
   return (
     <html lang="en" className="w-full">
       <body className="">
@@ -17,8 +21,11 @@ export default async function RootLayout({
           <a href="https://hyperlink.academy/">hyperlink.academy</a>
         </div>
         <div className="m-auto flex max-w-4xl gap-2 sm:gap-8 p-4 sm:p-8">
-          <div className="w-24 sm:w-32 flex flex-col flex-shrink-0 gap-2 sticky self-start top-2">
+          <div className="w-24 sm:w-32 flex flex-col flex-shrink-0 gap-4 leading-5 sticky self-start top-2">
+            {/* <strong> */}
             <Link href="/">home</Link>
+            {/* </strong> */}
+            ~-~-~-~
             {pages
               .sort((a, b) =>
                 a.metadata.published < b.metadata.published ? 1 : -1

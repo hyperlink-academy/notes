@@ -27,6 +27,7 @@ export default async function NotePage(props: { params: Params }) {
         <div className="flex flex-col">
           <h1 className="text-2xl font-bold">{note.metadata.title}</h1>
           <p className="italic text-grey-35">by {note.metadata.author}</p>
+          <p className="italic text-grey-35">{note.metadata.published}</p>
         </div>
 
         <div>
@@ -37,7 +38,8 @@ export default async function NotePage(props: { params: Params }) {
           ))}
         </div>
       </div>
-      <hr className="my-2" />
+      {/* <hr className="my-2" /> */}
+      <hr className="border-dotted my-2" />
       <note.default />
     </div>
   );
