@@ -100,13 +100,17 @@ pre {
 
 ul,
 ol {
-  margin-left: 1rem;
-  /* padding: 0; */
-  /* font-size: 0.9rem; */
+  margin-left: 2rem;
 }
 ul {
   list-style: square;
 }
 ol {
   list-style: decimal-leading-zero;
+}
+li {
+  margin-bottom: 0.5rem;
+}
+li:last-child {
+  margin-bottom: unset;
 }
