@@ -23,24 +23,30 @@ export default async function NotePage(props: { params: Params }) {
   if (!note) return <div>404 note not found</div>;
   return (
     <div className="flex flex-col gap-4">
-      <div className="w-full flex gap-2 justify-between">
-        <div className="flex flex-col">
-          <h1 className="text-2xl font-bold">{note.metadata.title}</h1>
-          <p className="italic text-grey-35">by {note.metadata.author}</p>
-          <p className="italic text-grey-35">{note.metadata.published}</p>
-        </div>
-
+      {/* <div className="w-full flex gap-2 justify-between"> */}
+      <div className="flex flex-col gap-2 mb-4">
+        <h1 className="text-2xl font-bold">{note.metadata.title}</h1>
+        <p className="text-grey-35">
+          <span className="italic">{note.metadata.author}</span> |{" "}
+          <span className="italic">{note.metadata.published}</span>
+        </p>
         <div className="shrink-0">
           {note.metadata.tags.map((tag, index) => (
-            <span className="text-xs p-1 border rounded-md" key={index}>
+            <span
+              className="text-xs p-1 border border-grey-55 bg-accent-gold rounded-md"
+              key={index}
+            >
               {tag}
             </span>
           ))}
         </div>
       </div>
+      {/* </div> */}
       {/* <hr className="my-2" /> */}
-      <hr className="border-dotted my-2" />
-      <note.default />
+      {/* <hr className="border-dotted my-2" /> */}
+      <div className="flex flex-col gap-4 text-lg">
+        <note.default />
+      </div>
     </div>
   );
 }
