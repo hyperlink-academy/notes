@@ -23,7 +23,7 @@ export default async function NotePage(props: { params: Params }) {
   if (!note) return <div>404 note not found</div>;
   return (
     <div className="flex flex-col gap-4">
-      {/* <div className="w-full flex gap-2 justify-between"> */}
+      {/* post meta wrapper */}
       <div className="flex flex-col gap-2 mb-4">
         <h1 className="text-2xl font-bold">{note.metadata.title}</h1>
         <p className="text-grey-35">
@@ -41,9 +41,7 @@ export default async function NotePage(props: { params: Params }) {
           ))}
         </div>
       </div>
-      {/* </div> */}
-      {/* <hr className="my-2" /> */}
-      {/* <hr className="border-dotted my-2" /> */}
+      {/* post content wrapper */}
       <div className="flex flex-col gap-4 text-lg">
         <note.default />
       </div>

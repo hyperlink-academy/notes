@@ -15,14 +15,14 @@ async function NotesList() {
         .sort((a, b) => (a.metadata.published < b.metadata.published ? 1 : -1))
         .map((page) => (
           // rotate each card from random -10 to 10 degrees
-          // translate each card (x-axis) from random -100 to 100 px
+          // translate each card (x-axis) from random -50 to 50%
           <Link
             href={`/note/${page.filename.slice(0, -4)}`}
             passHref
             key={page.filename}
             style={{
               rotate: `${Math.floor(Math.random() * (10 - -10) + -10)}deg`,
-              translate: `${Math.floor(Math.random() * (100 - -100) + -100)}px`,
+              translate: `${Math.floor(Math.random() * (50 - -50) + -50)}%`,
               boxShadow: "3px 4px 0px 0px rgb(0 0 0 / 0.5)",
             }}
             className="text-grey-15 hover:scale-105 hover:border-grey-35 transition-all no-underline border border-grey-80 rounded-md p-4 min-h-[72px] shadow bg-white w-48 sm:w-64"
