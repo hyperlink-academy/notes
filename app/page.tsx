@@ -1,4 +1,5 @@
 export const metadata = { title: "notes.hyperlink.academy" };
+import { log } from "console";
 import fs from "fs/promises";
 import Link from "next/link";
 import { cache } from "react";
@@ -9,6 +10,12 @@ export default async function HomePage() {
 
 async function NotesList() {
   let pages = await getPageData();
+
+  // shadow x-offset changes based on hour of day lol (+/- 6px)
+  const d = new Date();
+  let hour = d.getHours();
+  let shadow = (hour - 12) / 2;
+
   return (
     <div className="m-auto flex flex-col gap-8 sm:gap-16 p-4">
       {pages
@@ -16,7 +23,7 @@ async function NotesList() {
         .map((page) => (
           // CARD WRAPPER
           // rotate each card from random -10 to 10 degrees
-          // translate each card (x-axis) from random -50 to 50%
+          // translate each card (x-axis) from random -25 to 25%
           // TODO - maybe add min-height? e.g. min-h-[72px] sm:min-h-[192px]
           <Link
             href={`/note/${page.filename.slice(0, -4)}`}
@@ -24,10 +31,10 @@ async function NotesList() {
             key={page.filename}
             style={{
               rotate: `${Math.floor(Math.random() * (10 - -10) + -10)}deg`,
-              translate: `${Math.floor(Math.random() * (50 - -50) + -50)}%`,
-              boxShadow: "3px 4px 0px 0px rgb(0 0 0 / 0.5)",
+              translate: `${Math.floor(Math.random() * (25 - -25) + -25)}%`,
+              boxShadow: `${shadow}px 4px 0px 0px rgb(0 0 0 / 0.5)`,
             }}
-            className="text-grey-15 hover:scale-105 hover:border-grey-35 transition-all no-underline border border-grey-80 rounded-md p-4 shadow bg-white w-48 sm:w-64 md:w-96"
+            className="text-grey-15 hover:scale-105 hover:border-grey-35 transition-all no-underline border border-grey-80 rounded-md p-4 shadow bg-white w-64 sm:w-72 lg:w-96"
           >
             {/* card metadata wrapper */}
             <div className="flex flex-col gap-2">
