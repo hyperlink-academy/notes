@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* IMPORT ALL FONTS */
+  @font-face {
+    src: url(/fonts/iAWriterQuattroS-Regular.woff2);
+    font-family: "Quattro";
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  @font-face {
+    src: url(/fonts/iAWriterQuattroS-Bold.woff2);
+    font-family: "Quattro";
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  @font-face {
+    src: url(/fonts/iAWriterQuattroS-Italic.woff2);
+    font-family: "Quattro";
+    font-style: italic;
+    font-weight: normal;
+  }
+
+  @font-face {
+    src: url(/fonts/iAWriterQuattroS-BoldItalic.woff2);
+    font-family: "Quattro";
+    font-style: italic;
+    font-weight: bold;
+  }
+  /* END IMPORT FONTS */
+}
+
 html,
 body {
   padding: 0;
@@ -13,6 +45,7 @@ body {
   @apply p-0;
   @apply text-grey-15;
   min-height: -webkit-fill-available;
+  font-family: "Quattro";
   word-break: break-word;
 }
 
@@ -55,7 +88,7 @@ small {
 }
 
 pre {
-  font-family: inherit !important;
+  font-family: "Quattro" !important;
 }
 
 ul,
