@@ -1,5 +1,30 @@
 import "./globals.css";
+import localFont from "next/font/local";
 import Link from "next/link";
+const fonts = localFont({
+  src: [
+    {
+      path: "../public/fonts/iAWriterQuattroS-Regular.woff2",
+      weight: "normal",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/iAWriterQuattroS-Bold.woff2",
+      weight: "bold",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/iAWriterQuattroS-Italic.woff2",
+      weight: "normal",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/iAWriterQuattroS-BoldItalic.woff2",
+      weight: "bold",
+      style: "italic",
+    },
+  ],
+});
 
 export default async function RootLayout({
   children,
@@ -7,7 +32,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="w-full">
+    <html lang="en" className={`w-full ${fonts.className}}`}>
       {/* page wrapper */}
       <body className="px-4 pb-4 sm:pb-8 max-w-3xl m-auto flex flex-col gap-8">
         {/* header nav bar */}
