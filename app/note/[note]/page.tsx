@@ -33,7 +33,7 @@ export default async function NotePage(props: { params: Params }) {
         <div className="shrink-0">
           {note.metadata.tags.map((tag, index) => (
             <span
-              className="text-xs p-1 border border-grey-55 bg-accent-gold rounded-md"
+              className="text-xs text-grey-35 font-bold p-1 border border-grey-55 bg-accent-gold rounded-md"
               key={index}
             >
               {tag}

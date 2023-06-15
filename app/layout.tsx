@@ -9,7 +9,7 @@ export default async function RootLayout({
   return (
     <html lang="en" className="w-full">
       {/* page wrapper */}
-      <body className="px-4 pb-4 sm:pb-8 max-w-3xl m-auto flex flex-col gap-4">
+      <body className="px-4 pb-4 sm:pb-8 max-w-3xl m-auto flex flex-col gap-8">
         {/* header nav bar */}
         {/* link styles (e.g. shadow) match cards */}
         <div className="flex flex-row justify-between">
