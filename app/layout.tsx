@@ -26,7 +26,7 @@ export default async function RootLayout({
             home
           </Link>
           {/* <h2 className="pt-2">hyperlink notes</h2> */}
-          <div className="group flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
             <Link
               href="https://buttondown.email/hyperlink/"
               style={{ boxShadow: `${shadow}px 4px 0px 0px rgb(0 0 0 / 0.5)` }}
@@ -34,9 +34,6 @@ export default async function RootLayout({
             >
               subscribe
             </Link>
-            <span className="italic text-sm hidden group-hover:block group-hover:absolute group-hover:top-14">
-              to our newsletter!
-            </span>
           </div>
           <Link
             href="/about"
