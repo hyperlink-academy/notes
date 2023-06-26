@@ -58,6 +58,49 @@ function Annotation(props: {
   );
 }
 
+/*
+simple blockquote, used between sections
+centered block of large, italic text
++ small divider before and after
+*/
+export function Quote(props: any) {
+  return (
+    <div className="flex flex-col gap-8 my-4">
+      <hr className="w-24 m-auto text-grey-55" />
+      <div className="bg-white text-xl p-4 leading-[2rem] text-grey-35 text-center rounded-md italic flex flex-col gap-4">
+        {props.children}
+      </div>
+      <hr className="w-24 m-auto text-grey-55" />
+    </div>
+  );
+}
+
+/*
+generic CTA block
+text with big blue border
+*/
+export function CTA(props: any) {
+  return (
+    <div className="bg-white p-4 border-8 border-accent-blue rounded-md flex flex-col gap-4 my-4">
+      {props.children}
+    </div>
+  );
+}
+
+/*
+PLACEHOLDER for an image, diagram, etc.
+*/
+export function VisualPlaceholder(props: any) {
+  return <div className="bg-white p-4 border h-48">{props.children}</div>;
+}
+
 export function useMDXComponents(components: { [k: string]: React.Component }) {
-  return { YouTubeEmbed, Annotation, ...components };
+  return {
+    YouTubeEmbed,
+    Annotation,
+    Quote,
+    CTA,
+    VisualPlaceholder,
+    ...components,
+  };
 }
