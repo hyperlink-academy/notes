@@ -26,6 +26,18 @@ export default async function RootLayout({
             home
           </Link>
           {/* <h2 className="pt-2">hyperlink notes</h2> */}
+          <div className="group flex flex-col gap-4">
+            <Link
+              href="https://buttondown.email/hyperlink/"
+              style={{ boxShadow: `${shadow}px 4px 0px 0px rgb(0 0 0 / 0.5)` }}
+              className="border-b border-grey-80 shadow border-l border-r rounded-b-md px-4 pt-4 pb-2 -mt-2 bg-white no-underline hover:scale-105 hover:border-grey-35"
+            >
+              subscribe
+            </Link>
+            <span className="italic text-sm hidden group-hover:block group-hover:absolute group-hover:top-14">
+              to our newsletter!
+            </span>
+          </div>
           <Link
             href="/about"
             style={{ boxShadow: `${shadow}px 4px 0px 0px rgb(0 0 0 / 0.5)` }}
