@@ -91,7 +91,7 @@ export function CTA(props: any) {
 PLACEHOLDER for an image, diagram, etc.
 */
 export function VisualPlaceholder(props: any) {
-  return <div className="bg-white p-4 border h-48">{props.children}</div>;
+  return <div className="bg-white p-4 border h-48 my-4">{props.children}</div>;
 }
 
 // export function ButtondownSubscribeForm(props: any) {
