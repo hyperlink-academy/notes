@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 /*
 embed a youtube video!
 just include the video id (alphanumeric str in the url)
@@ -94,6 +96,15 @@ export function VisualPlaceholder(props: any) {
   return <div className="bg-white p-4 border h-48 my-4">{props.children}</div>;
 }
 
+/* captions on images */
+export function Caption(props: any) {
+  return (
+    <small className="mx-auto text-grey-55 max-w-sm mb-4 italic text-center">
+      {props.children}
+    </small>
+  );
+}
+
 // export function ButtondownSubscribeForm(props: any) {
 //   return (
 //     <div className="flex flex-col gap-4 bg-white rounded-md p-4 text-center my-8 max-w-fit m-auto">
@@ -134,6 +145,8 @@ export function useMDXComponents(components: { [k: string]: React.Component }) {
     Quote,
     CTA,
     VisualPlaceholder,
+    Image,
+    Caption,
     // ButtondownSubscribeForm,
     ...components,
   };

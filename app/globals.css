@@ -107,3 +107,10 @@ li {
 li:last-child {
   margin-bottom: unset;
 }
+
+img {
+  border: 2px solid #e8e2d7;
+  border-radius: 8px;
+  margin-top: 16px;
+  background-color: #fdfcfa;
+}
