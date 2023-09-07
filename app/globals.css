@@ -63,11 +63,13 @@ a {
 h1 {
   @apply text-3xl;
   @apply font-bold;
+  @apply mt-4;
 }
 
 h2 {
   @apply text-2xl;
   @apply font-bold;
+  @apply mt-2;
 }
 
 h3 {
