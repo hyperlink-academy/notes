@@ -90,6 +90,18 @@ export function CTA(props: any) {
 }
 
 /*
+generic sidebar block
+TBD
+*/
+export function Sidebar(props: any) {
+  return (
+    <div className="bg-background p-4 border-2 border-accent-gold rounded-md flex flex-col gap-4 my-4">
+      {props.children}
+    </div>
+  );
+}
+
+/*
 PLACEHOLDER for an image, diagram, etc.
 */
 export function VisualPlaceholder(props: any) {
@@ -144,6 +156,7 @@ export function useMDXComponents(components: { [k: string]: React.Component }) {
     Annotation,
     Quote,
     CTA,
+    Sidebar,
     VisualPlaceholder,
     Image,
     Caption,
