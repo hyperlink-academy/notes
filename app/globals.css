@@ -113,6 +113,6 @@ li:last-child {
 img {
   border: 2px solid #e8e2d7;
   border-radius: 8px;
-  margin-top: 16px;
   background-color: #fdfcfa;
+  margin: auto auto;
 }
