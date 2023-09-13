@@ -160,7 +160,7 @@ export function Button(props: {
 export function SpotImage(props: {
   alt: string;
   src: string;
-  classname?: string;
+  className?: string;
 }) {
   return (
     <NextImage
@@ -168,7 +168,7 @@ export function SpotImage(props: {
       height={200}
       alt={props.alt}
       src={props.src}
-      className={`bg-transparent border-transparent ml-0 mr-auto -mb-10 mt-12 ${props?.classname}`}
+      className={`bg-transparent border-transparent  -mb-10 mt-12 ${props?.className}`}
     />
   );
 }
