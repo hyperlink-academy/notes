@@ -1,5 +1,5 @@
 import NextImage from "next/image";
-import { PrintLink } from "components/PrintLink";
+import { PrintLink } from "./components/PrintLink";
 
 /*
 embed a youtube video!
