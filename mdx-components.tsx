@@ -1,4 +1,5 @@
 import NextImage from "next/image";
+import { PrintLink } from "components/PrintLink";
 
 /*
 embed a youtube video!
@@ -185,6 +186,7 @@ export function useMDXComponents(components: { [k: string]: React.Component }) {
     Caption,
     Button,
     SpotImage,
+    PrintLink,
     ...components,
   };
 }
