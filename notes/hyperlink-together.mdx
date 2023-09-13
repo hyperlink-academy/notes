@@ -1,3 +1,10 @@
+import inktop from "../public/images/hyperlink-together/inktop.png";
+import frames from "../public/images/hyperlink-together/frames-with-kelsey-1.png";
+import moldnet from "../public/images/hyperlink-together/moldnet.png";
+import poster from "../public/images/hyperlink-together/poster.png";
+import pwf from "../public/images/hyperlink-together/pwf.png";
+import writingRoom from "../public/images/hyperlink-together/writing-room.png";
+
 export const metadata = {
   title: "Hyperlink Together — a system for collaborative projects",
   description:
@@ -7,8 +14,12 @@ export const metadata = {
   tags: ["announcements"],
 };
 
-![](/images/hyperlink-together/poster.png)
-For the past two months, we've been experimenting, talking with many of you, and working to make Hyperlink a great place for small-scale collaborative projects.
+<Image
+  src={poster}
+  alt="a poster featuring some famous projects born from friendly collaboration and bearing the words Projects With Friends"
+/>
+For the past two months, we've been experimenting, talking with many of you, and
+working to make Hyperlink a great place for small-scale collaborative projects.
 
 We call this focus area "Projects with Friends":
 
@@ -27,23 +38,30 @@ Let's call this system **Hyperlink Together** — all about doing work in concer
 
 Here are its key parts, and how they work together:
 
+<SpotImage
+  alt="a tin can and string telephone, with a greeting inside a speech bubble at each end."
+  src="/images/hyperlink-together/beacon.png"
+/>
+
 ## Beacon, aka push notifications
+
+<CTA>
+
+### Try it! 🔬
+
+Navigate to [https://hyperlink.academy](https://hyperlink.academy) from your mobile browser.
+
+Make sure you're logged in, then tap the settings icon on your account homepage. From here, you can enable notifications!
+
+You'll get a notification when there are new comments of chat messages in your Spaces!
+
+</CTA>
 
 We've taken advantage of recent improvements with progressive web apps, in particular their recent support on iOS, to enable push notifications for activity in Spaces.
 
 This makes a Space function more like a group chat — rather than having to remember to check back, you can see as soon as your collaborators add something that needs your attention.
 
-<CTA>
-
-### How to Try 🔬
-
-Add the app on mobile — from the share or three dot menu in your browser, select "Add to Home Screen".
-
-Then tap the settings icon on your Hyperlink homepage, enable notifications, and you'll see new cards and comments in your Spaces.
-
-</CTA>
-
-Why it's useful:
+**Why it's useful:**
 
 - Patterns for how we use Spaces include making a 'general' chatroom, and commenting on cards to talk about particular tasks or essay drafts, both cases where we want to know when someone replies!
 - In both our Spaces and others, we've seen it's common to start with a burst of energy but rapidly taper off; we think notifications can be a much stronger pull to continuously revisit a Space
@@ -52,7 +70,10 @@ Why it's useful:
 
 ### EXAMPLE: [Inktop](https://hyperlink.academy/s/charles/s/5/inktop)
 
-![](/images/hyperlink-together/inktop.png)
+<Image
+  src={inktop}
+  alt="a screenshot of Inktop, a hyperlink space for designing e-ink computers"
+/>
 
 This Space was started as a place to chat about visions for designing new e-ink computers, discussing various concepts and hardware ideas.
 
@@ -64,31 +85,40 @@ It includes a group chat for jamming on ideas, which was active at the beginning
 
 ### EXAMPLE: [Frames with Celine and Kelsey](https://hyperlink.academy/s/celine/s/7/frames-with-celine-and-kelsey)
 
-![](/images/hyperlink-together/frames-with-kelsey-1.png)
-
-Celine made this Space to share progress updates on a collaborative project with her artist friend Kelsey.
+<Image
+  src={frames}
+  alt="a screenshot Frames with Celine and Kelsey, a hyperlink space that Celine made to organize information and updates about woodne frames she made from her friend Kelsey"
+/>
+Celine made this Space to share progress updates on a collaborative project with
+her artist friend Kelsey.
 
 At first she had to text Kelsey separately each time to let her know she added an update to the Space; notifications make it easier to share these updates alongside the full context of the project, where clicking the notification brings you right into the relevant update with more detail.
 
 </Sidebar>
+hey lets pretend there was some text here
+
+<SpotImage
+  alt="a tin can and string telephone, with a greeting inside a speech bubble at each end."
+  src="/images/hyperlink-together/here.png"
+/>
 
 ## Here, aka realtime presence
+
+<CTA>
+
+### Try it! 🔬
+
+Each Space now has a people section in the sidebar. When multiple people are in a space, you'll see their names light up in different colors. You'll also be able to find them on cards and in rooms!
+
+We suggest planning a session to work together for an hour or two — you can even do an audio call directly in the Space!
+
+</CTA>
 
 With multiplayer presence, you can see everyone currently in a Space, and exactly where in the Space they are.
 
 This sort of granular visibility helps you see what people are doing, which is nice for both gathering a general sense of shared energy in a Space, and focusing on doing particular things together.
 
-<CTA>
-
-### How to Try 🔬
-
-You'll see this automatically when you're in a Space with others at the same time. Each member will have a different color, and you'll be able to see which rooms and cards they're in.
-
-We suggest planning a session to work together for an hour or two — you can even do an audio call directly in the Space, see below!
-
-</CTA>
-
-Why it's useful:
+**Why it's useful:**
 
 - Convening a group on the internet in a way that feels like you're actually sharing space together is a great feeling!
 - It's really nice to have this sense of togetherness, while also being able to do your own thing individually — and go between the two by easily seeing where others are, like using a map, with both freeform spatial elements, and simple navigational affordances
@@ -97,23 +127,28 @@ Why it's useful:
 
 ### EXAMPLE: [Hyperlink Writing Room 2023](https://hyperlink.academy/s/brendan/s/23/hyperlink-writing-room-2023)
 
-![](/images/hyperlink-together/writing-room.png)
-
-With our own team "writing room" Space, we often found it easiest to work in sessions, exploring ideas in realtime and taking notes together, then asynchronously writing drafts and sharing feedback.
+<Image
+  src={writingRoom}
+  alt="A screenshot of The HyperLink Writing Room, a Hyperlink space where members of the Hyperlink Team work on drafts for blog posts"
+/>
+With our own team "writing room" Space, we often found it easiest to work in sessions,
+exploring ideas in realtime and taking notes together, then asynchronously writing
+drafts and sharing feedback.
 
 We're excited about the new live presence indicators making it easier to jump between different ideas and drafts together as we talk about them.
 
 </Sidebar>
 
+<SpotImage
+  alt="a tin can and string telephone, with a greeting inside a speech bubble at each end."
+  src="/images/hyperlink-together/talk.png"
+/>
+
 ## Talk, aka audio calls
-
-If multiple people are in a Space together, you can join an audio call and seamlessly start chatting. If you recall our "hyperspace" experiments from over a year ago, we're bringing this aspect back!
-
-It's voice only, so that you can focus on the actual things you're exploring together — looking at cards, writing, reviewing, commenting — as you chat.
 
 <CTA>
   
-### How to Try 🔬
+### Try it! 🔬
   
 Once you're in a Space together, start or join a call from the sidebar. You can switch audio devices and mute yourself if needed.
   
@@ -121,7 +156,11 @@ You'll see from the member list who else is in the call with you — and with re
 
 </CTA>
 
-Why it's useful:
+If multiple people are in a Space together, you can join an audio call and seamlessly start chatting. If you recall our "hyperspace" experiments from over a year ago, we're bringing this aspect back!
+
+It's voice only, so that you can focus on the actual things you're exploring together — looking at cards, writing, reviewing, commenting — as you chat.
+
+**Why it's useful:**
 
 - With phone calls, we can feel one another's presence, but we don't share space and see things together; with video calls we can do the 'share screen' dance, but it's a different dynamic, more like a presentation…
 - In Hyperlink the Space is first, a shared place with the call layered on top; we can talk together but focus our attention on the actual things we're exploring — and go back and forth between looking at the same things together, and each doing our own work side by side
@@ -130,9 +169,13 @@ Why it's useful:
 
 ### EXAMPLE: [Mold Net](https://hyperlink.academy/s/yet/s/4/mold-net)
 
-![](/images/hyperlink-together/moldnet.png)
-
-We actually joined our friends Jake and JT for a video call when they started a Space for "Mold Net", an experimental mycelial search engine, before we had calls built in.
+<Image
+  src={moldnet}
+  alt="a screenshot of Moldnet, a Hyperlink Space in which two friends collaborate on building a new kind of search engine"
+/>
+We actually joined our friends Jake and JT for a video call when they started a Space
+for "Mold Net", an experimental mycelial search engine, before we had calls built
+in.
 
 It was very cool to peek in at a collaborative session, but we wished it were a more unified experience — we're hoping that built-in calls make Spaces feel more like a shared lab, kitchen, or café where collaborators can talk and work together.
 
@@ -142,9 +185,12 @@ It was very cool to peek in at a collaborative session, but we wished it were a 
 
 ### EXAMPLE: [Cycle: Projects with Friends](https://hyperlink.academy/s/jared/s/9/cycle-projects-with-friends)
 
-![](/images/hyperlink-together/pwf.png)
-
-In our shared team Space for our current cycle, we're already finding it useful to be able to chat together on daily standup calls.
+<Image
+  src={pwf}
+  alt="a screenshot of Cycle: Projects With Friends, a Hyperlink space for the Hyperlink team to manage thier last 6 weeks of work"
+/>
+In our shared team Space for our current cycle, we're already finding it useful to
+be able to chat together on daily standup calls.
 
 We often take notes during the call, and continue to add and edit cards right after as we get into our respective work for the day.
 
@@ -177,43 +223,52 @@ First things first:
 
 Then give it a spin:
 
-- Add the app on mobile & enable notifications ([app details](https://hyperlink.academy/docs?tab=app))
-- Explore a few example Spaces ([view examples](https://hyperlink.academy/docs?tab=examples))
+- [Add the app on mobile](https://hyperlink.academy/docs?tab=app) & enable notifications
+- Explore a few [example Spaces](https://hyperlink.academy/docs?tab=examples)
 - Make a Space and invite a friend!
 
 If you give Hyperlink a try, we'd love to know — what's your top request to make this great for your collaborative projects? [Email us anytime](mailto:contact@hyperlink.academy) :)
 
-<Sidebar>
+**Two other things that may help you get started:**
 
-### Print the Poster
-
-That image at the top is a 8.5" x 11" poster!
-
-Print it at home; staple it to a bulletin board in a place you like to work; tape it to a telephone pole on your block. If you do post it somewhere…send us a photo?
-
-You can also send it directly to a friend, along with an invite link to join a Space, if you like!
-
-</Sidebar>
-
-Two other things that may help you get started:
-
+<CTA>
 ### Personal Onboarding
 
-Schedule a 1:1 call to chat about your projects, give the app a test drive, and set up your first Space
+Not sure how to get started? Suffering from blank page syndrome? Schedule a call with the Hyperlink Team to talk through your project and set up your first space!
 
 <Button
   content="Schedule 1:1 Onboarding"
   href="https://calendly.com/jared-hyperlink"
+  className="mx-auto"
 />
+</CTA>
+
+<CTA>
 
 ### Hyperlink Office Hours
 
-Join a community hang to talk internet collaboration & explore project ideas together — _**Thursday, Sept 14, 5-7pm ET**_
+Drop in and chat about project ideas, learn about Spaces and what they're good for, and find out more about Hyperlink—
+
+_**Thursday, Sept 14, 5-7pm ET / 2-5pm PT**_
 
 <Button
   content="RSVP for Office Hours!"
   href="https://partiful.com/e/KYBnXghQkOx67zuxQdlJ"
+  className="mx-auto"
 />
+
+</CTA>
+<CTA>
+
+### Print the Poster
+
+The image at the top of this post is actually a printable poster!
+
+Print it at home; staple it to a bulletin board in a place you like to work; tape it to a telephone pole on your block. If you do post it somewhere… send us a photo?
+
+You can also send it directly to a friend, along with an invite link to join a Space, if you like!
+
+</CTA>
 
 ## What's next?
 

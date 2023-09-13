@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["./app/**/*.{js,ts,jsx,tsx}", "./mdx-components.tsx"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./mdx-components.tsx",
+    "./notes/*.mdx",
+  ],
   darkMode: false,
 
   theme: {

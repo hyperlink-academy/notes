@@ -1,4 +1,4 @@
-import Image from "next/image";
+import NextImage from "next/image";
 
 /*
 embed a youtube video!
@@ -67,12 +67,12 @@ centered block of large, italic text
 */
 export function Quote(props: any) {
   return (
-    <div className="flex flex-col gap-8 my-4">
-      <hr className="w-24 m-auto text-grey-55" />
-      <div className="bg-white text-xl p-4 leading-[2rem] text-grey-35 text-center rounded-md italic flex flex-col gap-4">
+    <div className="flex flex-col gap-2 my-4 text-grey-55 text-center">
+      <div>※ ※ ※</div>
+      <div className="text-md px-8 leading-[2rem] text-grey-35 text-center rounded-md italic flex flex-col gap-4">
         {props.children}
       </div>
-      <hr className="w-24 m-auto text-grey-55" />
+      <div>※ ※ ※</div>
     </div>
   );
 }
@@ -83,7 +83,7 @@ text with big blue border
 */
 export function CTA(props: any) {
   return (
-    <div className="bg-white p-4 border-8 border-accent-blue rounded-md flex flex-col gap-4 my-4">
+    <div className="bg-bg-blue p-4 border border-grey-80 rounded-md flex flex-col text-grey-35 mt-4 mb-6 text-center">
       {props.children}
     </div>
   );
@@ -95,7 +95,7 @@ TBD
 */
 export function Sidebar(props: any) {
   return (
-    <div className="bg-white p-4 border-8 border-accent-gold rounded-md flex flex-col gap-4 my-4">
+    <div className="bg-white p-4 border-double border-4 border-accent-gold rounded-lg flex flex-col my-4">
       {props.children}
     </div>
   );
@@ -111,13 +111,32 @@ export function VisualPlaceholder(props: any) {
 /* captions on images */
 export function Caption(props: any) {
   return (
-    <small className="mx-auto text-grey-55 max-w-sm mb-4 italic text-center">
+    <small className="mx-auto text-grey-55 max-w-sm mb-4 -mt-4 italic text-center">
       {props.children}
     </small>
   );
 }
 
-export function Button(props: { content: string; href: string }) {
+// Handles images with optional caption. You need to import images into each blog post the way next wants you to ugh.
+// see https://nextjs.org/docs/app/building-your-application/optimizing/images#local-images for more info. or ask celine.
+export function Image(props: { caption?: string; src: string; alt: string }) {
+  return (
+    <div className="text-center mx-auto flex flex-col gap-4 relative w-full h-auto my-4 first:mt-0">
+      <NextImage src={props.src} alt={props.alt} />
+      {props.caption && (
+        <small className=" text-grey-55 max-w-sm mx-auto mb-4 -mt-4 italic">
+          {props.caption}
+        </small>
+      )}
+    </div>
+  );
+}
+
+export function Button(props: {
+  content: string;
+  href: string;
+  className?: string;
+}) {
   return (
     <a
       href={props.href}
@@ -131,10 +150,26 @@ export function Button(props: { content: string; href: string }) {
       border-accent-blue bg-accent-blue 
       hover:bg-bg-blue hover:text-accent-blue
       active:bg-bg-blue active:text-accent-blue active:outline active:outline-2
-      `}
+      ${props?.className}`}
     >
       {props.content}
     </a>
+  );
+}
+
+export function SpotImage(props: {
+  alt: string;
+  src: string;
+  classname?: string;
+}) {
+  return (
+    <NextImage
+      width={160}
+      height={200}
+      alt={props.alt}
+      src={props.src}
+      className={`bg-transparent border-transparent ml-0 mr-auto -mb-10 mt-12 ${props?.classname}`}
+    />
   );
 }
 
@@ -149,6 +184,7 @@ export function useMDXComponents(components: { [k: string]: React.Component }) {
     Image,
     Caption,
     Button,
+    SpotImage,
     ...components,
   };
 }
