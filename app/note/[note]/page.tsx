@@ -4,6 +4,7 @@ import path from "path";
 type PostMetadata = {
   title: string;
   author: string;
+  description: string;
   published: string;
   tags: string[];
 };
@@ -13,7 +14,15 @@ type Params = { note: string };
 export async function generateMetadata({ params }: { params: Params }) {
   let note = await getNoteData(params.note);
   if (!note) return { title: "404 not found" };
-  return { title: note.metadata.title };
+  return {
+    title: note.metadata.title,
+    twitter: {
+      card: "summary",
+      title: note.metadata.title,
+      description: note.metadata.description,
+      creator: "@hyperlink_a",
+    },
+  };
 }
 
 export default async function NotePage(props: { params: Params }) {
