@@ -1,0 +1,165 @@
+export const metadata = {
+  title: "Building A Rich PWA",
+  description:
+    "An inside look at our experience building Hyperlink as a progressive web app, and why we think it matters for the future of the web",
+  author: "Brendan & Jared",
+  published: "2023-11-21",
+  tags: ["essays"],
+};
+
+This post reflects on our experience making Hyperlink as a progressive web app (PWA) — why we're doing it, what the process has been like, and how it ties into a broader vision for the potential of the internet.
+
+<Sidebar>
+
+**WHAT IS HYPERLINK?**
+
+A place to make Spaces for internet collaboration — shared environments for learning & creating.
+
+Spaces are like a mix of more intimate Discord (chat; social) x more fun Notion (notes; info) x more flexible Basecamp (project management).
+
+They're containers that you can build and customize for many kinds of activity — think book clubs, side projects, research, cohorts and more — focusing on meaningful work in a place that feels friendly and fun.
+
+</Sidebar>
+
+Our goals for this post are to get you excited about PWAs generally and Hyperlink specifically:
+
+- Give you a glimpse of what it's like making a progressive app
+- Explain how the web is becoming a Really Good App Platform
+- Convince you to try the Hyperlink app and see firsthand how it's good
+
+Note: this one's co-written by Jared and Brendan. Sidebars are questions from Brendan (who orchestrates our blog) and answers from Jared (who orchestrates our PWA implementation!)
+
+## What, PWAy tell, is a PWA?
+
+A progressive web app is basically an app that's built on web technologies, but that works like a mobile app. It takes 'responsive web design' — websites built to work fluidly on devices of all sizes — a couple steps further, behaving more seamlessly like a native iOS or Android app, as well as (potentially!) supporting other features like offline mode and push notifications.
+
+If we're being honest "PWA" is an unwieldy acronym, but we're guessing it will eventually go the way of other web-tech acronyms like "AJAX", which used to be a special term for how web apps use JavaScript for advanced app behaviors, but eventually melted into the background as it became standard practice.
+
+The theory, then, is that eventually PWAs will just be _apps_, and — as the Apple-Google duopoly diminishes — it will be those legacy "app store apps" that we refer to with a special name.
+
+## Open web apps: onwards and uPWArds
+
+The web is the ultimate app platform.
+
+It's open, stable, built on proven protocols — it's where apps should live. Not in walled gardens where a platform decides when and if an app is allowed to exist, not to mention exacts a substantial toll on any payments that flow through the ecosystem.
+
+The web has gotten progressively better as a primary medium for software applications over the past couple decades. We won't get into the whole history of building apps and interactive experiences on the web, but until recently it's been really hard to make apps that work everywhere, on all devices, with great user experience, purely using web technologies.
+
+It's still not easy, exactly, but it's never been easier. We're nearing a tipping point where if you squint a bit, it's possible to make and use web apps in a way that feels almost indistinguishable from native apps.
+
+<Sidebar>
+
+**What do you see as the promise of PWAs? What's the delta between where we are now and their full potential?**
+
+I think the promise here is something like the ability to use the web as building blocks for your personal computing environment.
+
+Like up until now the web was this huge landscape that you ventured out into in your personal craft, your web browser. Whereas your phone was this home you could build for yourself, place the apps where you want, theme, structure, etc.
+
+PWAs represent this sort of first step of making the landscape of the web useful for building your home, your environment with. The long term dream is the APIs extend to such a point that the kinds of interactions that are possible on our phone operating systems are possible between websites, that you can share information between them, copy rich objects, use something like iOS shortcuts to orchestrate complex interactions across them. Etc.
+
+</Sidebar>
+
+As we near this tipping point, we can already see what's on the other side, and doing our best to get there early.
+
+In this near future, apps are written once, and run everywhere. They're easy for developers to maintain and evolve. And they're easy for everyone else to use — from installing and signing up, to working across devices and interoperating with other ecosystems of tools.
+
+## Benefits: certain PWActical advantages
+
+Steve Jobs actually thought apps should run on the web — before the app store, this was part of Apple's vision for the iPhone! He [introduced the idea](https://www.youtube.com/watch?v=QvQ9JNm_qWc) — of websites as apps, running on the Safari browser engine — in 2007.
+
+It took a while to get there, and Apple pivoted rather hard in the other direction for a while, but this vision is finally becoming real, the benefits of PWAs starting to outweigh the annoyances around how they work.
+
+There are a number of such benefits — some familiar and obvious; others underappreciated. Some are primarily for developers:
+
+- **easier to build cross-platform apps**: the web works on all devices; with shared browser runtimes and standard APIs, you just have to make the app responsive to different sizes and device affordances (e.g. touchscreens)
+- **developer momentum**: we can build faster, because a) we only have to build for one platform, and b) the iteration loop is quicker since we're not limited by app review cycles, and we can more easily get new features in front of real people
+
+More importantly, all users benefit from:
+
+- **inspectability**: the web is more open; more inspectable, with a couple clicks you can pull up browser dev tools and poke around, see what an app is doing, even tweak things locally
+- **addressability and shareability**: part of the web's openness is around where things live — websites have URLs, and apps can be built so that certain parts have their own unique URLs too, enabling deep linking and easier sharing
+- **culture of the open web**: it feels good to be part of a wider community building for openness; on a related note our app is open source, so others can see how it's made, run it locally, fork and build on it, and we can extend it in the future with APIs etc.
+- **modular internet homes**: one cool thing you can't do with native apps is save different parts of a website as different app shortcuts; you could potentially save individual Spaces as their own apps, in the future even with their own icons and notifications, building a more personal experience based on how you want to use the app
+
+## Building Hyperlink: a PWAgmatic approach
+
+We've tried to make Hyperlink a responsive app since we started, in 2020, by making a simple course platform.
+
+This first version of Hyperlink was a web app, and it worked well on mobile, but it was a bit closer to the "website" end of the spectrum.
+
+The past year, as we've gone from prototype to stable beta of our new app, we've leaned hard into making Hyperlink truly feel like an app on all platforms, and worked to take full advantage of the possibilities of a PWA.
+
+This new version of Hyperlink actually has been built as a PWA for a while now; taking our existing website and wrapping it so that one could install it on their home screen was surprisingly little work.
+
+There are, however, many details required to get it truly feeling "native", from touch gesture support, to tweaking how the status bar appears in the app and interacts with UI elements, to what page the user is redirected to when they open the app — all the little interaction details that make an app feel…well, app-like!
+
+<Sidebar>
+
+**What things a PWA enables us to do are you most excited about right now?**
+
+Honestly, the biggest thing is quick interactions with the app. Being able to just immediately open it up and get into doing something, or reply quickly through a notification. Another intersting opportunity is in the share panel, though I'm not quite sure the APIs for accessing it.
+
+Taking pictures, video, audio — having all that in your pocket and immediately connected to a web of your projects, groups, clubs, etc. — is very exciting!
+
+</Sidebar>
+
+The biggest thing, which we added recently, is full support for push notifications — this more than anything makes the PWA truly feel like a mobile app. And it's only recently become possible, as Apple enabled PWAs to use their notification system, so we were excited to make it happen!
+
+It also, however, proved the most challenging part to implement.
+
+## Challenges: pitfalls and PWAtfalls
+
+PWAs are one of those web features that have absorbed an an enormous amount of engineering and infrastructure work, yet still haven't quite hit the mainstream.
+
+Part of that is the weird install process, the challenge of discovery, and the overall learning curve.
+
+Another part is the culture — many of the kinds of apps that have asked for it are kind of scammy (think: random blogs that "need" to send you notifications), and as PWAs are less of a known entity, trust and familiarity isn't yet there.
+
+That said, app store culture is fraught as well, from convoluted review processes to pay-for-play in search results — maybe what we need is a next generation, openly curated directory of high-quality PWAs.
+
+Yet another difficulty for PWA-builders is the long tail of native APIs that have been missing on the web. Good news — as noted, the biggest of these, notifications, finally hit iOS just a few months ago.
+
+Compared to the basics (e.g. making the app installable) implementing notifications has been much more work, and has been an interesting lens on the strengths and weakness of the web platform.
+
+<Sidebar>
+
+**What have been the biggest (or most surprising) challenges in building a great PWA?**
+
+Dealing with the somewhat esoteric encoding required for sending push messages to an app was a surprise, but it was pretty surmountable (annoyingly, the solution ended up being deploying the logic for this in an environment that could run the one library that exists for it).
+
+A more insidiuous issue has been the difficulty of testing notification interactions. When a user clicks a notification we should be able to open up the app to the relevant place. Ideally, if the app is _already_ running in the background we should be able to open it up really fast and smoothly. However this requires us communicating with the serivce worker (via the WebPush protocol) and then the service worker potentially communicating with the app, and then app orchestrating this transition. I'm not happy with how this works currently, but the real issue is the lack of a nice development workflow for testing this out.
+
+</Sidebar>
+
+So, on the one hand — not a simple process. And it's so new there just aren't a lot of great solutions, or the ones that do exist require certain tradeoffs or duct tape or potentially re-architecting some things…
+
+But on the other hand — with a single API we have notifications across both major mobile platforms, and even desktop browsers. Awesome!
+
+## What's next: an internet app PWAyground
+
+We're planning to continue improving the general structure and onboarding experience to be more app-like, and reducing friction both in getting started, and in using the app day to day.
+
+<Sidebar>
+
+**What are the gaps or missing pieces with the Hyperlink PWA right now?**
+
+There's a certain amount of just like app structure. Having a proper landing/onboarding/signin page for the app, not just the web landing page; having a nav/space switcher system that makes sense.
+
+Better links would also for sure be up there as well. I think also just a certain amount of speed/fluidity/responsiveness is possible to achieve as well and would take us closer.
+
+Overall though, I think we're pretty damn close! I haven't used many PWAs as feature rich and good feeling as ours.
+
+</Sidebar>
+
+Agreed — the app is feeling pretty great to use! There's always a long tail of things to adjust and polish, but it's working really well on mobile and we've just completed some layout and UI refactoring that makes it even nicer.
+
+A couple other things we might try:
+
+- wrapping the app as an app store installable app — still built as a web app, but bridged to be natively installable
+- playing with other ways to leverage existing web and device technologies, e.g. for audio capture and file uploads
+
+We're using it every day both for our own work on Hyperlink, and for a variety of creative projects. It's great to be able to use the same app on desktop, for serious day-to-day work, and on mobile for quick capture and on the go updates.
+
+[See here for more info on installing the app](https://hyperlink.academy/docs?tab=app).
+
+Give it a try and let us know what you think!
