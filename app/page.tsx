@@ -38,12 +38,12 @@ async function NotesList() {
           >
             {/* card metadata wrapper */}
             <div className="flex flex-col gap-2">
-              <h2 className="text-lg">
+              <h2 className="text-lg mb-2">
                 {page.metadata?.title || page.filename}
               </h2>
               <p className="text-sm">{page.metadata?.description}</p>
               {/* wrap tags + date */}
-              <div className="flex gap-2 justify-between items-center flex-wrap mt-4">
+              <div className="flex gap-2 justify-between items-center flex-wrap mt-0">
                 <div>
                   {page.metadata.tags.map((tag: string, index: number) => (
                     <span
