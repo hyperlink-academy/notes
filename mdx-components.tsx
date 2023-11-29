@@ -11,13 +11,15 @@ example:
 */
 function YouTubeEmbed(props: { id: string }) {
   return (
-    <iframe
-      style={{ aspectRatio: "16/9", width: "100%" }}
-      src={`https://www.youtube.com/embed/${props.id}`}
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-    ></iframe>
+    <div className="mb-4">
+      <iframe
+        style={{ aspectRatio: "16/9", width: "100%" }}
+        src={`https://www.youtube.com/embed/${props.id}`}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
+    </div>
   );
 }
 
@@ -53,7 +55,7 @@ function Annotation(props: {
     <div
       className={`border-4 ${borderColor} ${bgColor} rounded-md p-4 flex flex-col gap-4`}
     >
-      {props.children}
+      <div>{props.children}</div>
       <div className="text-sm self-end">
         <em>{props.author}</em> | <em>{props.date}</em>
       </div>
@@ -68,9 +70,9 @@ centered block of large, italic text
 */
 export function Quote(props: any) {
   return (
-    <div className="flex flex-col gap-2 my-4 text-grey-55 text-center">
+    <div className="blockquote flex flex-col gap-2 my-4 text-grey-55 text-center">
       <div>※ ※ ※</div>
-      <div className="text-md px-8 leading-[2rem] text-grey-35 text-center rounded-md italic flex flex-col gap-4">
+      <div className="quotetext text-md px-8 leading-[2rem] text-grey-35 text-center rounded-md italic flex flex-col gap-4">
         {props.children}
       </div>
       <div>※ ※ ※</div>
@@ -84,7 +86,7 @@ text with big blue border
 */
 export function CTA(props: any) {
   return (
-    <div className="bg-bg-blue p-4 border border-grey-80 rounded-md flex flex-col text-grey-35 mt-4 mb-6 text-center">
+    <div className="bg-bg-blue p-4 border border-grey-80 rounded-md flex flex-col text-grey-35 mt-2 mb-6 text-center">
       {props.children}
     </div>
   );
@@ -96,7 +98,7 @@ TBD
 */
 export function Sidebar(props: any) {
   return (
-    <div className="bg-white p-4 border-double border-4 border-accent-gold rounded-lg flex flex-col my-4">
+    <div className="bg-white p-4 border-double border-4 border-accent-gold rounded-lg flex flex-col mt-2 mb-6">
       {props.children}
     </div>
   );
@@ -169,7 +171,7 @@ export function SpotImage(props: {
       height={200}
       alt={props.alt}
       src={props.src}
-      className={`bg-transparent border-transparent  -mb-10 mt-12 ${props?.className}`}
+      className={`bg-transparent border-transparent -mb-4 mt-8 ${props?.className}`}
     />
   );
 }
