@@ -60,27 +60,25 @@ a {
   box-sizing: border-box;
 }
 
+/* NB: should only be used for note titles! */
 h1 {
   @apply text-3xl;
   @apply font-bold;
-  @apply mb-4;
-  @apply mt-16;
-  @apply first:mt-0;
 }
 
 h2 {
   @apply text-2xl;
   @apply font-bold;
-  @apply mb-3;
-  @apply mt-12;
+  @apply mb-4;
+  @apply mt-8;
   @apply first:mt-0;
 }
 
 h3 {
   @apply text-xl;
   @apply font-bold;
-  @apply mb-1;
-  @apply mt-3;
+  @apply mb-2;
+  @apply mt-4;
   @apply first:mt-0;
 }
 
@@ -116,7 +114,7 @@ li {
   margin-bottom: 0.5rem;
 }
 li:last-child {
-  margin-bottom: 1.5rem;
+  @apply mb-4;
 }
 
 img {
@@ -124,4 +122,8 @@ img {
   border-radius: 8px;
   background-color: #fdfcfa;
   margin: auto auto;
+}
+
+.blockquote .quotetext :last-child {
+  margin: 0;
 }

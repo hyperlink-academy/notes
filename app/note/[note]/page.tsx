@@ -32,23 +32,28 @@ export default async function NotePage(props: { params: Params }) {
   if (!note) return <div>404 note not found</div>;
   return (
     <div className="flex flex-col gap-4">
-      <div className="shrink-0">
-        {note.metadata.tags.map((tag, index) => (
-          <span
-            className="text-xs text-grey-35 font-bold p-1 border border-grey-55 bg-accent-gold rounded-md"
-            key={index}
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
       {/* post meta wrapper */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3 mb-4">
+        {/* title */}
         <h1 className="text-4xl font-bold mb-0">{note.metadata.title}</h1>
-        <p className="text-grey-55 italic">
-          <span className="italic">{note.metadata.author}</span> |{" "}
-          <span className="italic">{note.metadata.published}</span>
-        </p>
+        {/* meta */}
+        <div className="flex gap-4 justify-between items-center">
+          <div className="text-grey-55">
+            <span className="italic">{note.metadata.author}</span>
+            <span> | </span>
+            <span className="italic">{note.metadata.published}</span>
+          </div>
+          <div className="shrink-0 mb-[2px]">
+            {note.metadata.tags.map((tag, index) => (
+              <span
+                className="text-xs text-grey-35 font-bold p-1 border border-grey-55 bg-accent-gold rounded-md"
+                key={index}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
       {/* post content wrapper */}
       <div className="flex flex-col text-lg">
