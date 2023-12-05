@@ -70,9 +70,9 @@ centered block of large, italic text
 */
 export function Quote(props: any) {
   return (
-    <div className="blockquote flex flex-col gap-2 my-4 text-grey-55 text-center">
+    <div className="blockquote flex flex-col gap-2 mt-4 mb-8 text-grey-55 text-center">
       <div>※ ※ ※</div>
-      <div className="quotetext text-md px-8 leading-[2rem] text-grey-35 text-center rounded-md italic flex flex-col gap-4">
+      <div className="quotetext text-xl px-8 leading-[2rem] text-grey-35 text-center rounded-md italic flex flex-col gap-4">
         {props.children}
       </div>
       <div>※ ※ ※</div>
