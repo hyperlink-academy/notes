@@ -167,8 +167,8 @@ export function SpotImage(props: {
 }) {
   return (
     <NextImage
-      width={160}
-      height={200}
+      width={1600}
+      height={2000}
       alt={props.alt}
       src={props.src}
       className={`bg-transparent border-transparent -mb-4 mt-8 ${props?.className}`}
