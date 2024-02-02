@@ -11,6 +11,7 @@
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.2.3",
+    "@vercel/analytics": "^1.1.2",
     "autoprefixer": "^10.4.12",
     "feed": "^4.2.2",
     "next": "^13.4.19",

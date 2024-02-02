@@ -1,5 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/react";
 
 export default async function RootLayout({
   children,
@@ -13,6 +14,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="w-full">
+      <Analytics />
       {/* page wrapper */}
       <body className="px-4 pb-8 sm:pb-16 max-w-3xl m-auto flex flex-col gap-8">
         {/* header nav bar */}
