@@ -53,10 +53,10 @@ function Annotation(props: {
   }
   return (
     <div
-      className={`border-4 ${borderColor} ${bgColor} rounded-md p-4 flex flex-col gap-4`}
+      className={`border-4 ${borderColor} ${bgColor} flex flex-col gap-4 rounded-md p-4`}
     >
       <div>{props.children}</div>
-      <div className="text-sm self-end">
+      <div className="self-end text-sm">
         <em>{props.author}</em> | <em>{props.date}</em>
       </div>
     </div>
@@ -70,9 +70,9 @@ centered block of large, italic text
 */
 export function Quote(props: any) {
   return (
-    <div className="blockquote flex flex-col gap-2 mt-4 mb-8 text-grey-55 text-center">
+    <div className="blockquote text-grey-55 mb-8 mt-4 flex flex-col gap-2 text-center">
       <div>※ ※ ※</div>
-      <div className="quotetext text-xl px-8 leading-[2rem] text-grey-35 text-center rounded-md italic flex flex-col gap-4">
+      <div className="quotetext text-grey-35 flex flex-col gap-4 rounded-md px-8 text-center text-xl italic leading-[2rem]">
         {props.children}
       </div>
       <div>※ ※ ※</div>
@@ -86,7 +86,7 @@ text with big blue border
 */
 export function CTA(props: any) {
   return (
-    <div className="bg-bg-blue p-4 border border-grey-80 rounded-md flex flex-col text-grey-35 mt-2 mb-6 text-center">
+    <div className="bg-bg-blue border-grey-80 text-grey-35 mb-6 mt-2 flex flex-col rounded-md border p-4 text-center">
       {props.children}
     </div>
   );
@@ -98,7 +98,7 @@ TBD
 */
 export function Sidebar(props: any) {
   return (
-    <div className="bg-white p-4 border-double border-4 border-accent-gold rounded-lg flex flex-col mt-2 mb-6">
+    <div className="border-accent-gold mb-6 mt-2 flex flex-col rounded-lg border-4 border-double bg-white p-4">
       {props.children}
     </div>
   );
@@ -108,30 +108,15 @@ export function Sidebar(props: any) {
 PLACEHOLDER for an image, diagram, etc.
 */
 export function VisualPlaceholder(props: any) {
-  return <div className="bg-white p-4 border h-48 my-4">{props.children}</div>;
+  return <div className="my-4 h-48 border bg-white p-4">{props.children}</div>;
 }
 
 /* captions on images */
 export function Caption(props: any) {
   return (
-    <small className="mx-auto text-grey-55 max-w-sm mb-4 -mt-4 italic text-center">
+    <small className="text-grey-55 mx-auto -mt-4 mb-4 max-w-sm text-center italic">
       {props.children}
     </small>
-  );
-}
-
-// Handles images with optional caption. You need to import images into each blog post the way next wants you to ugh.
-// see https://nextjs.org/docs/app/building-your-application/optimizing/images#local-images for more info. or ask celine.
-export function Image(props: { caption?: string; src: string; alt: string }) {
-  return (
-    <div className="text-center mx-auto flex flex-col gap-4 relative w-full h-auto my-4 first:mt-0">
-      <NextImage src={props.src} alt={props.alt} />
-      {props.caption && (
-        <small className=" text-grey-55 max-w-sm mx-auto mb-4 -mt-4 italic">
-          {props.caption}
-        </small>
-      )}
-    </div>
   );
 }
 
@@ -146,13 +131,13 @@ export function Button(props: {
       target="_blank"
       rel="noopener noreferrer"
       className={`
-      flex w-max gap-2
-      items-center justify-center
-      border py-1 px-2 rounded-md
-      font-bold text-white no-underline
-      border-accent-blue bg-accent-blue 
-      hover:bg-bg-blue hover:text-accent-blue
-      active:bg-bg-blue active:text-accent-blue active:outline active:outline-2
+      border-accent-blue bg-accent-blue hover:bg-bg-blue
+      hover:text-accent-blue active:bg-bg-blue
+      active:text-accent-blue flex w-max items-center
+      justify-center gap-2 rounded-md
+      border px-2
+      py-1 font-bold
+      text-white no-underline active:outline active:outline-2
       ${props?.className}`}
     >
       {props.content}
@@ -160,6 +145,43 @@ export function Button(props: {
   );
 }
 
+export function Image(props: { caption?: string; src: string; alt: string }) {
+  return (
+    <div className="image relative mx-auto my-4 flex h-auto  w-full flex-col gap-2 text-center first:mt-0">
+      <NextImage
+        src={props.src}
+        alt={props.alt}
+        width={1600}
+        height={2000}
+        className="border-grey-80 rounded-lg border p-1"
+      />
+      {props.caption && (
+        <small className=" text-grey-55 mx-auto mb-4 max-w-sm italic">
+          {props.caption}
+        </small>
+      )}
+    </div>
+  );
+}
+
+export function Video(props: { src: string; alt: string; caption?: string }) {
+  return (
+    <div className="video relative mx-auto my-4 flex h-auto  w-full flex-col gap-2 text-center first:mt-0">
+      <video
+        src={props.src}
+        className="border-grey-80 rounded-lg border p-1"
+        autoPlay
+        loop
+        playsInline
+      />
+      {props.caption && (
+        <small className=" text-grey-55 mx-auto mb-4 max-w-sm italic">
+          {props.caption}
+        </small>
+      )}
+    </div>
+  );
+}
 export function SpotImage(props: {
   alt: string;
   src: string;
@@ -171,7 +193,7 @@ export function SpotImage(props: {
       height={2000}
       alt={props.alt}
       src={props.src}
-      className={`bg-transparent border-transparent -mb-4 mt-8 ${props?.className}`}
+      className={`-mb-4 mt-8 border-transparent bg-transparent ${props?.className}`}
     />
   );
 }
@@ -185,6 +207,7 @@ export function useMDXComponents(components: { [k: string]: React.Component }) {
     Sidebar,
     VisualPlaceholder,
     Image,
+    Video,
     Caption,
     Button,
     SpotImage,
