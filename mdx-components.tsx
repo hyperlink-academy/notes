@@ -186,7 +186,6 @@ export function SpotImage(props: {
   alt: string;
   src: string;
   className?: string;
-  noTopMargin?: boolean;
 }) {
   return (
     <NextImage
@@ -194,12 +193,25 @@ export function SpotImage(props: {
       height={2000}
       alt={props.alt}
       src={props.src}
-      noTopMargin={props.noTopMargin}
-      className={`-mb-4 border-transparent bg-transparent ${props.noTopMargin ? "mt-0" : "mt-8"} ${props?.className}`}
+      className={`-mb-4 mt-8 border-transparent bg-transparent ${props?.className}`}
     />
   );
 }
-
+export function CoverImage(props: {
+  alt: string;
+  src: string;
+  className?: string;
+}) {
+  return (
+    <NextImage
+      width={1600}
+      height={2000}
+      alt={props.alt}
+      src={props.src}
+      className={` border-transparent bg-transparent ${props?.className}`}
+    />
+  );
+}
 export function useMDXComponents(components: { [k: string]: React.Component }) {
   return {
     YouTubeEmbed,
@@ -213,6 +225,7 @@ export function useMDXComponents(components: { [k: string]: React.Component }) {
     Caption,
     Button,
     SpotImage,
+    CoverImage,
     PrintLink,
     ...components,
   };
