@@ -186,6 +186,7 @@ export function SpotImage(props: {
   alt: string;
   src: string;
   className?: string;
+  noTopMargin?: boolean;
 }) {
   return (
     <NextImage
@@ -193,7 +194,8 @@ export function SpotImage(props: {
       height={2000}
       alt={props.alt}
       src={props.src}
-      className={`-mb-4 mt-8 border-transparent bg-transparent ${props?.className}`}
+      noTopMargin={props.noTopMargin}
+      className={`-mb-4 border-transparent bg-transparent ${props.noTopMargin ? "mt-0" : "mt-8"} ${props?.className}`}
     />
   );
 }
