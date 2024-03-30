@@ -3,6 +3,7 @@ import { log } from "console";
 import fs from "fs/promises";
 import Link from "next/link";
 import { cache } from "react";
+import { EmailForm } from "../components/EmailForm";
 
 export default async function HomePage() {
   return <NotesList />;
@@ -18,6 +19,7 @@ async function NotesList() {
 
   return (
     <div className="m-auto flex flex-col gap-8 sm:gap-16 p-4">
+      <EmailForm />
       {pages
         .sort((a, b) => (a.metadata.published < b.metadata.published ? 1 : -1))
         .map((page) => (
